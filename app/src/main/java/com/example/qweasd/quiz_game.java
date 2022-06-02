@@ -1,6 +1,7 @@
 package com.example.qweasd;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.view.View;
@@ -20,6 +21,7 @@ public class quiz_game extends AppCompatActivity {
     TextView QuestionTextView;
     TextView FinalScoreTextView;
     Button button0;
+    Button button5;
     Button button1;
     Button button2;
     int maxtime = 30000;
@@ -164,6 +166,7 @@ public class quiz_game extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void optionSelect(View view){
         totalQuestions++;
         if(Integer.toString(indexOfCorrectAnswer).equals(view.getTag().toString())){
@@ -175,15 +178,16 @@ public class quiz_game extends AppCompatActivity {
 
         }
 
-        ScoreTextView.setText(Integer.toString(points)+"/"+Integer.toString(totalQuestions));
+        ScoreTextView.setText(points +"/"+ totalQuestions);
 
         NextQuestion();
     }
 
+    @SuppressLint("SetTextI18n")
     public void playAgain(View view){
         points=0;
         totalQuestions=0;
-        ScoreTextView.setText(Integer.toString(points)+"/"+Integer.toString(totalQuestions));
+        ScoreTextView.setText(points +"/"+ totalQuestions);
         countDownTimer.start();
         lastLayout.setVisibility(View.INVISIBLE);
         constraintLayout.setVisibility(View.VISIBLE);
@@ -208,9 +212,20 @@ public class quiz_game extends AppCompatActivity {
             @Override
             public void onFinish() {
                 TimeTextView.setText("Time Up!");
-                FinalScoreTextView.setText(Integer.toString(points)+"/"+Integer.toString(totalQuestions));
+                FinalScoreTextView.setText(Integer.toString(points));
                 constraintLayout.setVisibility(View.INVISIBLE);
                 lastLayout.setVisibility(View.VISIBLE);
+
+                button5 = findViewById(R.id.button5);
+                button5.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent =new Intent(quiz_game.this, menu_game.class);
+                        startActivity(intent);
+                    }
+                });
+
+
 
             }
         }.start();

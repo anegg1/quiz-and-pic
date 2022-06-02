@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/backg"
     android:layout_height="match_parent"
     tools:context=".quiz_game">
 
@@ -74,18 +75,33 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
         <Button
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
             android:id="@+id/buttonPlayAgain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
             android:layout_marginBottom="143dp"
             android:onClick="playAgain"
-            android:text="Play Again"
+            android:text="еще раз"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="выйти в меню"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/buttonPlayAgain"
+            app:layout_constraintEnd_toEndOf="@+id/buttonPlayAgain"
+            app:layout_constraintStart_toStartOf="@+id/buttonPlayAgain"
+            app:layout_constraintTop_toBottomOf="@+id/textView4"
+            app:layout_constraintVertical_bias="0.88" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -111,6 +127,8 @@
             android:onClick="optionSelect"
             android:tag="0"
             android:text="Button"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/button2"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +151,8 @@
             android:text="Button"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@+id/button3"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/QuestionTextView" />
@@ -148,6 +168,8 @@
             android:layout_marginRight="72dp"
             android:layout_marginBottom="218dp"
             android:background="#9BE7F1"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
             android:onClick="optionSelect"
             android:tag="2"
             android:text="Button"
@@ -160,6 +182,8 @@
 
         <Button
             android:id="@+id/button3"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:textColor="@color/black"
             android:layout_width="140dp"
             android:layout_height="105dp"
             android:layout_marginStart="240dp"

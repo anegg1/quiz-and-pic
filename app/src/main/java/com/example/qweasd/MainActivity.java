@@ -45,27 +45,25 @@ public class MainActivity extends AppCompatActivity  {
             startActivity(intent);
         }
 
-
-
-
-
-
-
         button = findViewById(R.id.button);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(KEY_NAME,edUsername.getText().toString());
-                editor.putString(KEY_PASS,edPass.getText().toString());
-                editor.apply();
+                if (edUsername.getText().toString().length() != 0 && edPass.getText().toString().length() != 0) {
 
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(KEY_NAME, edUsername.getText().toString());
+                    editor.putString(KEY_PASS, edPass.getText().toString());
+                    editor.apply();
+                    Intent intent = new Intent(MainActivity.this, menu_game.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "поля ввода пустые", Toast.LENGTH_LONG).show();
+                }
 
-                Intent intent = new Intent(MainActivity.this, menu_game.class);
-                startActivity(intent);
-                Toast.makeText(MainActivity.this, "Login", Toast.LENGTH_LONG).show();
             }
         });
     }

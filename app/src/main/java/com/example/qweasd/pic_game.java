@@ -1,5 +1,6 @@
 package com.example.qweasd;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,13 +27,15 @@ public class pic_game extends AppCompatActivity {
     String[] answers = new String[4];
     Button btn1, btn2, btn3, btn4, btnRestart;
     int points = 0;
-    TextView tvPoints;
+    TextView tvPoints, btnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pic_game);
         ivShowImage = findViewById(R.id.ivShowImage);
+
+        btnBack = findViewById(R.id.button6);
         btn1 = findViewById(R.id.btn1);
         btn2 = findViewById(R.id.btn2);
         btn3 = findViewById(R.id.btn3);
@@ -83,13 +86,14 @@ public class pic_game extends AppCompatActivity {
         btn3.setText(answers[2]);
         btn4.setText(answers[3]);
         btnRestart.setVisibility(View.GONE);
+        btnBack.setVisibility(View.GONE);
     }
 
     public void answerSelected(View view) {
         String answer = ((Button) view).getText().toString();
         if(answer.equals(celebNames.get(index))){
             points++;
-            tvPoints.setText(points + "/7");
+            tvPoints.setText(points + "/8");
         }
         index++;
         if(index > celebNames.size() - 1){
@@ -99,6 +103,16 @@ public class pic_game extends AppCompatActivity {
             btn3.setVisibility(View.GONE);
             btn4.setVisibility(View.GONE);
             btnRestart.setVisibility(View.VISIBLE);
+            btnBack.setVisibility(View.VISIBLE);
+            btnBack.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(pic_game.this, menu_game.class);
+                    startActivity(intent);
+                }
+            });
+
+
         } else{
             generateQuestions(index);
         }
@@ -106,8 +120,10 @@ public class pic_game extends AppCompatActivity {
 
     public void restart(View view) {
         if(index > 6){
+
             index = 0;
             points = 0;
+
             ivShowImage.setVisibility(View.VISIBLE);
             btn1.setVisibility(View.VISIBLE);
             btn2.setVisibility(View.VISIBLE);
