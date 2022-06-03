@@ -1,34 +1,33 @@
 {
   "project_info": {
-    "project_number": "806027378282",
-    "firebase_url": "https://name-97c2b-default-rtdb.firebaseio.com",
-    "project_id": "name-97c2b",
-    "storage_bucket": "name-97c2b.appspot.com"
+    "project_number": "1083673025740",
+    "project_id": "qweasdtopuser",
+    "storage_bucket": "qweasdtopuser.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:806027378282:android:f1c525d295ede37dc99413",
+        "mobilesdk_app_id": "1:1083673025740:android:f7e76114afd95645c57669",
         "android_client_info": {
           "package_name": "com.example.qweasd"
         }
       },
       "oauth_client": [
         {
-          "client_id": "806027378282-gpt50naqkvsq9glomerfl7o10422rgga.apps.googleusercontent.com",
+          "client_id": "1083673025740-2mvdv3f717c1tg3nh171egl9hsfipead.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBkMAD3frn2TMO_nBYwhlzYlxcgklUqIdE"
+          "current_key": "AIzaSyDe720UbvasAy3_xIvx7WxRQzn6BxhSVeQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "806027378282-gpt50naqkvsq9glomerfl7o10422rgga.apps.googleusercontent.com",
+              "client_id": "1083673025740-2mvdv3f717c1tg3nh171egl9hsfipead.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

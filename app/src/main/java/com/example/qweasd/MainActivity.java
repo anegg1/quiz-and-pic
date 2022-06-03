@@ -11,9 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity  {
 
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("user");
 
     CheckBox rem_userpass;
     EditText edUsername, edPass;
@@ -36,6 +40,7 @@ public class MainActivity extends AppCompatActivity  {
         editor = sharedPreferences.edit();
         edUsername = findViewById(R.id.editTextTextPersonName);
         edPass = findViewById(R.id.editTextTextPassword);
+        myRef.setValue(edUsername.getText().toString() + " " + edPass.getText().toString());
 
 
         String name = sharedPreferences.getString(KEY_NAME, null);
